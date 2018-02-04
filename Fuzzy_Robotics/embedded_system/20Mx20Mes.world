@@ -1,0 +1,157 @@
+include "stage_igvc_obstacles.inc"
+include "stage_igvc_waypoints.inc"
+include "husky_camera.inc"
+
+
+define myblock model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+
+husky_base
+(		  
+  # can refer to the robot by this name
+  name "Robot"
+  pose [ 7.000 -7.000 0.000 180.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  ranger_return 1.000
+)
+
+define floorlaneline model
+(
+  # sombre, sensible, artistic
+  color "white"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  ranger_return 0
+)
+
+
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+
+interval_sim 100  # simulation timestep in milliseconds
+
+
+window
+( 
+  size [ 852 766 ] 
+
+  rotate [ 0.000 0.000 ]
+  scale 28.806 
+)
+floorplan
+(
+  name "grass"
+  size [100.000 100.000 0.001 ]
+  pose [ 0.000 0.000 0.000 0.000]
+  color "ForestGreen"
+  obstacle_return 0
+  gui_move 0
+)
+
+# load an environment bitmap
+# Draw lanes
+#floorplan
+#( 
+#  name "igvc"
+#  size [ 18.000 18.000 0.002 ]
+#  pose [ 0.000 0.000 0.000 0.000]
+#  bitmap "bitmaps/igvc_jaus.png"
+#  gui_outline 0
+#  obstacle_return 0
+#  color "white"
+#  gui_move 0
+#)
+
+
+## IGVC 2012 Waypoint total distance 40M ,9x11 meter driving path
+
+barrel          (pose [9.000  -8.000   0.000 0.000 ] )
+barrel          (pose [8.500  -8.000   0.000 0.000 ] )
+barrel          (pose [8.000  -8.000   0.000 0.000 ] )
+barrel          (pose [7.500  -8.000   0.000 0.000 ] )
+barrel          (pose [7.000  -8.000   0.000 0.000 ] )
+barrel          (pose [6.500  -8.000   0.000 0.000 ] )
+barrel          (pose [6.000  -8.000   0.000 0.000 ] )
+barrel          (pose [5.500  -8.000   0.000 0.000 ] )
+barrel          (pose [5.000  -8.000   0.000 0.000 ] )
+barrel          (pose [4.500  -8.000   0.000 0.000 ] )
+barrel          (pose [4.000  -8.000   0.000 0.000 ] )
+barrel          (pose [3.500  -8.000   0.000 0.000 ] )
+barrel          (pose [3.000  -8.000   0.000 0.000 ] )
+barrel          (pose [2.500  -8.000   0.000 0.000 ] )
+barrel          (pose [2.000  -8.000   0.000 0.000 ] )
+
+barrel          (pose [2.000  -7.500   0.000 0.000 ] )
+barrel          (pose [2.000  -7.000   0.000 0.000 ] )
+barrel          (pose [2.000  -6.500   0.000 0.000 ] )
+barrel          (pose [2.000  -6.000   0.000 0.000 ] )
+barrel          (pose [-4.631  -6.923   0.000 0.000 ] )
+barrel          (pose [2.000  -5.000   0.000 0.000 ] )
+barrel          (pose [2.000  -4.500   0.000 0.000 ] )
+barrel          (pose [2.000  -4.000   0.000 0.000 ] )
+barrel          (pose [5.055  -0.931   0.000 0.000 ] )
+barrel          (pose [2.000  -3.000   0.000 0.000 ] )
+
+barrel          (pose [9.000  -6.000   0.000 0.000 ] )
+barrel          (pose [8.500  -6.000   0.000 0.000 ] )
+barrel          (pose [8.000  -6.000   0.000 0.000 ] )
+barrel          (pose [7.500  -6.000   0.000 0.000 ] )
+barrel          (pose [7.000  -6.000   0.000 0.000 ] )
+barrel          (pose [6.500  -6.000   0.000 0.000 ] )
+barrel          (pose [6.000  -6.000   0.000 0.000 ] )
+barrel          (pose [5.500  -6.000   0.000 0.000 ] )
+barrel          (pose [5.000  -6.000   0.000 0.000 ] )
+barrel          (pose [4.500  -6.000   0.000 0.000 ] )
+barrel          (pose [4.000  -6.000   0.000 0.000 ] )
+
+barrel          (pose [4.764  4.706   0.000 0.000 ] )
+barrel          (pose [4.000  -5.000   0.000 0.000 ] )
+barrel          (pose [4.000  -4.500   0.000 0.000 ] )
+barrel          (pose [4.000  -4.000   0.000 0.000 ] )
+barrel          (pose [6.673  0.666   0.000 0.000 ] )
+barrel          (pose [4.000  -3.000   0.000 0.000 ] )
+
+barrel          (pose [-1.937  3.224   0.000 0.000 ] )
+barrel          (pose [-7.578  2.882   0.000 0.000 ] )
+barrel          (pose [-4.743  -3.071   0.000 0.000 ] )
+barrel          (pose [4.228  1.948   0.000 0.000 ] )
+barrel          (pose [-0.025  5.380   0.000 0.000 ] )
+barrel          (pose [-4.743  3.071   0.000 0.000 ] )
+barrel          (pose [2.847  -0.382   0.000 0.000 ] )
+barrel          (pose [-2.465  -0.903   0.000 0.000 ] )
+barrel          (pose [1.423  3.298   0.000 0.000 ] )
+barrel          (pose [-5.554  0.555   0.000 0.000 ] )
+barrel          (pose [-2.326  -4.270   0.000 0.000 ] )
+
+
+

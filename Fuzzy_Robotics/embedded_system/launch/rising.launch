@@ -1,0 +1,9 @@
+<launch>
+    <param name="/use_sim_time" value="true"/>
+    <node pkg="stage_ros" type="stageros" name="IGVC_stage" args="$(find stageroscam)/world/20Mx20M.world" output="screen">
+    </node>
+    <node pkg="embedded_system" type="tracking_control" name="tracking" output="screen">
+    </node>
+    <node pkg="embedded_system" type="rising" name="line" output="screen">
+    </node>
+ </launch>

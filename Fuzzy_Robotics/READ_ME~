@@ -1,0 +1,18 @@
+Hi Wentao,
+
+In the attachment is the new version code of Matlab fuzzy control.
+
+MathWork claimed that they no longer support old ROS Matlab IO package, which means that the Matlab version earlier than 2015a can no longer connect to ROS. So I have to recreated the old fuzzy control code for new Matlab Robotics System Toolbox. 
+
+I cannot get the Matlab which has Robotics System Toolbox and working for Ubuntu, so I have to run Matlab on a Windows machine and the ROS Hydro on Ubuntu machine instead.
+
+The steps to demo the fuzzy control is basically as same as before, but here's a little different. 
+
+ROS Hydro with Ubuntu 12.04 on a VMware virtual machine to create ROS master, and a Matlab 2015b is run on the Windows 10. The network adapter of VMware virtual machine is set to be bridge for which it can be in the same network as the Windows machine.
+
+It is important that the Ubuntu running VMware has different IP address compared with Windows machine. You can use ipconfig command in the terminal to check the IP address of the Ubuntu system, then setup the ROS IP.
+
+And the new main file for Matlab is fuzzy_demo.m.
+
+Sincerely,
+Xue, Bai
